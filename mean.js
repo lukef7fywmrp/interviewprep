@@ -1,17 +1,12 @@
 // function mean(n) {
 //   let arr = n.toString().split("");
-//   let total = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     total += Number(arr[i]);
-//   }
 
-//   return total / arr.length;
+//   return arr.reduce((prev, curr) => prev + Number(curr), 0) / arr.length;
 // }
 
-function mean(n) {
-  let arr = n.toString().split("");
-
-  return arr.reduce((prev, curr) => prev + Number(curr), 0) / arr.length;
+// Solution
+function mean(num) {
+  return [...String(num)].reduce((a, c) => a + +c, 0) / String(num).length;
 }
 
 console.log(mean(666));
