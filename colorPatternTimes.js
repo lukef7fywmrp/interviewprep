@@ -1,20 +1,17 @@
-function colorPatternTimes(cols) {
-  let squareTime = cols.length * 2;
+// Solution
+const colorPatternTimes = (cols) =>
+  cols.length * 2 + cols.slice(1).filter((c, i) => c !== cols[i]).length;
 
-  //   let switchTime = 0;
-  //   for (let i = 0; i < cols.length; i++) {
-  //     if (cols[i] !== cols[i + 1]) {
-  //       switchTime++;
-  //     }
-  //   }
+// Alternate Solution
+// function colorPatternTimes(cols) {
+//   let x = cols.length;
+//   let sw = 0;
+//   for (i = 0; i < x - 1; i++) {
+//     if (cols[i] != cols[i + 1]) sw++;
+//   }
 
-  let switchTime = cols.reduce(
-    (a, c, i, arr) => (c !== arr[i + 1] ? a + 1 : 0),
-    0
-  );
-
-  return squareTime + switchTime;
-}
+//   return x * 2 + sw;
+// }
 
 console.log(colorPatternTimes(["Yellow", "Green", "Blue"]));
 
